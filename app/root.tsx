@@ -11,8 +11,8 @@ import {
   useNavigation,
   useSubmit,
 } from "@remix-run/react";
-import { json } from "@remix-run/node";
-import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import { json } from "@vercel/remix";
+import type { LinksFunction, LoaderFunctionArgs } from "@vercel/remix";
 
 import { createEmptyContact, getContacts } from "./data";
 

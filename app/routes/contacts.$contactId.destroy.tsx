@@ -1,4 +1,4 @@
-import { ActionFunctionArgs } from "@remix-run/node";
+import { ActionFunctionArgs } from "@vercel/remix";
 import { redirect } from "react-router";
 import invariant from "tiny-invariant";
 import { deleteContact } from "~/data";

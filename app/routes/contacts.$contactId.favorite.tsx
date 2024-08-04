@@ -1,4 +1,4 @@
-import { ActionFunctionArgs } from "@remix-run/node";
+import { ActionFunctionArgs } from "@vercel/remix";
 import invariant from "tiny-invariant";
 import { updateContact } from "~/data";
 
