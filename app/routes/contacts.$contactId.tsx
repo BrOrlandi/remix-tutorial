@@ -1,6 +1,6 @@
 import { json } from "@remix-run/node";
 
-import { Form, Outlet, useMatches, useLocation, Link, useLoaderData } from "@remix-run/react";
+import { Form, Outlet, useMatches, useLocation, Link, useLoaderData, useFetcher } from "@remix-run/react";
 import type { FunctionComponent } from "react";
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import type { ContactRecord } from "../data";
@@ -102,10 +102,14 @@ export default function Contact() {
 const Favorite: FunctionComponent<{
   contact: Pick<ContactRecord, "favorite">;
 }> = ({ contact }) => {
-  const favorite = contact.favorite;
+
+	const fetcher = useFetcher();
+  const favorite = fetcher.formData
+    ? fetcher.formData.get("favorite") === "true"
+    : contact.favorite;
 
   return (
-    <Form method="post">
+    <fetcher.Form method="post" action="favorite">
       <button
         aria-label={
           favorite
@@ -117,6 +121,6 @@ const Favorite: FunctionComponent<{
       >
         {favorite ? "★" : "☆"}
       </button>
-    </Form>
+    </fetcher.Form>
   );
 };
