@@ -98,6 +98,13 @@ export async function deleteContact(id: string) {
 [
   {
     avatar:
+      "https://pbs.twimg.com/profile_images/1597607019778908160/ZIpq2Xto_400x400.jpg",
+    first: "Bruno",
+    last: "Orlandi",
+    twitter: "@BrOrlandi",
+  },
+  {
+    avatar:
       "https://sessionize.com/image/124e-400o400o2-wHVdAuNaxi8KJrgtN3ZKci.jpg",
     first: "Shruti",
     last: "Kapoor",
